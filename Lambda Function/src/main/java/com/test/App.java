@@ -44,8 +44,7 @@ public class App implements RequestHandler<S3EventNotification, String> {
 	String CLIENT_REGION = "ap-south-1";
 	String BUCKET_NAME = "new-bucket-download";  // Destination bucket for encrypted file
 	
-	String bucketName = "new-bucket-upload"; // Source bucket - Triggers lambda
-	String keyName = "hello world.txt";
+
 
 	public String handleRequest(S3EventNotification s3Event, Context context) {
 		log.info("Lambda function is invoked:" + s3Event.toJson());
@@ -113,7 +112,7 @@ public class App implements RequestHandler<S3EventNotification, String> {
 								.build();
 
 
-						s3EncryptionClient_key.putObject(bucketName, s3ObjectKeyName, s3ObjectContent);
+						s3EncryptionClient_key.putObject(BUCKET_NAME, s3ObjectKeyName, s3ObjectContent);
 
 		log.info("Key encrypted and uploaded into S3 bucket");
 						
