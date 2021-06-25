@@ -38,13 +38,13 @@ public class App implements RequestHandler<S3EventNotification, String> {
 
 	
 	Logger log = LoggerFactory.getLogger(App.class);
-	final String ACCESS_KEY = "AKIAS4WFJ62CJHOBY7YO";
-	final String SECRET_KEY = "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";
-	String CMK_KEY_ARN = "arn:aws:kms:ap-south-1:199056029316:key/bacf8ab7-c9a0-45db-aec3-ef3214b015ba";
+	final String ACCESS_KEY = "********";
+	final String SECRET_KEY = "********";
+	String CMK_KEY_ARN = "**************";
 	String CLIENT_REGION = "ap-south-1";
-	String BUCKET_NAME = "new-bucket-download";
+	String BUCKET_NAME = "new-bucket-download";  // Destination bucket for encrypted file
 	
-	String bucketName = "new-bucket-upload";
+	String bucketName = "new-bucket-upload"; // Source bucket - Triggers lambda
 	String keyName = "hello world.txt";
 
 	public String handleRequest(S3EventNotification s3Event, Context context) {
